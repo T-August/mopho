@@ -1,0 +1,387 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Chistmas</title>
+    <style>
+        html,body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #main{
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+        #video_url{
+            width: 100%;
+            height: 100%;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <video src="./assets/1.mp4" id="video_url" muted="muted" autoplay="autoplay" loop="loop"></video>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        var video = document.getElementById("video_url");
+        video.src = "" ;
+        video.play();
+    })
+</script>
+</html> -->
+
+
+<!-- 
+background-image: url('https://img.thuthuatphanmem.vn/uploads/2018/09/24/anh-dong-cay-thong-noel-tuyet-roi_053435066.gif'); /* nền giáng sinh chuyển động */
+https://cdn.pixabay.com/photo/2017/11/27/23/21/funds-christmas-2982479_1280.png
+<source src="./assets/christmas-holidays-270797.mp3" type="audio/mp3">
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            z-index: 2;
+            background-image: url('https://img.thuthuatphanmem.vn/uploads/2018/09/24/anh-dong-cay-thong-noel-tuyet-roi_053435066.gif'); /* nền giáng sinh chuyển động */
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hidden {
+            display: none;
+        }
+        #birthday-question {
+            font-size: 40px;
+            margin-bottom: 30px;
+            animation: shake 0.5s ease-out infinite alternate;
+        }
+        #birthday-input-container {
+            position: relative;
+        }
+        #birthday-input {
+            font-size: 30px;
+            padding: 20px;
+            border: 3px solid #fff;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #fff;
+            width: 250px;
+            transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+            background-image: url('https://cdn-icons-png.flaticon.com/128/613/613788.png'),
+                                url('https://cdn-icons-png.flaticon.com/128/9056/9056334.png');
+            background-repeat: no-repeat;
+            background-position: left top, right top;
+            padding-left: 140px;
+            padding-right: 20px;
+        }
+        #birthday-input:focus {
+            transform: scale(1.1);
+            background-color: #f0e68c;
+        }
+        #submit-button {
+            font-size: 22px;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0px 0px 15px rgba(40, 167, 69, 0.5);
+            animation: glow 1.5s infinite;
+        }
+        #submit-button:hover {
+            background-color: #218838;
+        }
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px #28a745, 0 0 10px #28a745, 0 0 15px #28a745, 0 0 20px #28a745;
+            }
+            100% {
+                box-shadow: 0 0 15px #28a745, 0 0 20px #28a745, 0 0 25px #28a745, 0 0 30px #28a745;
+            }
+        }
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        #video_url {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #letter-icon {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 50px;
+            cursor: pointer;
+            color: #fff;
+            z-index: 3;
+        }
+        #card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 25px;
+    display: none;
+    text-align: center;
+    color: #fff;
+    z-index: 4;
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    background-image: url('https://cdn.pixabay.com/photo/2017/11/27/23/21/funds-christmas-2982479_1280.png'); /* Nền thiệp Giáng Sinh */
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+        #card h2 {
+            font-size: 50px;
+            color: #ff6347;
+            animation: colorChange 2s infinite;
+        }
+        #card p {
+            font-size: 24px;
+            color: #fff;
+            margin-top: 40px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Hiệu ứng loading */
+        #loading {
+            display: none;
+            font-size: 28px;
+            color: #ffcc00;
+            width: 100%;  /* Đảm bảo thanh chiếm toàn bộ chiều rộng */
+            height: 10px; /* Chiều cao của thanh loading */
+            background: #fff; /* Màu nền thanh loading */
+            border-radius: 5px; /* Làm tròn góc */
+            position: relative; /* Để tạo hiệu ứng di chuyển */
+        }
+
+        #loading::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%; /* Bắt đầu từ 0% */
+            height: 100%;
+            background: #28a745; /* Màu thanh loading */
+            border-radius: 5px;
+            animation: loadingBar 2s infinite; /* Thêm hiệu ứng chuyển động */
+        }
+
+        @keyframes loadingBar {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%; /* Kết thúc ở 100% */
+            }
+        }
+
+        /* Thêm hiệu ứng chuyển động */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(-10px); }
+            100% { transform: translateX(10px); }
+        }
+
+        @keyframes colorChange {
+            0% { color: #ff6347; }
+            50% { color: #32cd32; }
+            100% { color: #ff6347; }
+        }
+        #animated-letter-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    cursor: pointer;
+    color: #ff0000; /* Màu đỏ cho lá thư */
+    z-index: 3;
+    display: none;
+    animation: fadeInOut 2s infinite, letterGlow 1.5s infinite;
+    border: 2px solid #ff6347; /* Đường viền mềm mại */
+    border-radius: 15px; /* Làm mềm góc */
+    padding: 10px;
+    background: linear-gradient(135deg, #ff6b6b 25%, #ff9a9e 75%);
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; transform: translate(-50%, -50%); }
+    50% { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes letterGlow {
+    0% {
+        box-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 15px #ff6347, 0 0 20px #ff6347;
+    }
+    100% {
+        box-shadow: 0 0 15px #ff6347, 0 0 20px #ff6347, 0 0 25px #ff6347, 0 0 30px #ff6347;
+    }
+}
+
+#animated-letter-icon::before, #animated-letter-icon::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    width: 30px;
+    height: 30px;
+    border: 15px solid transparent;
+    border-bottom-color: #ff6347; /* Màu của đôi cánh */
+    border-radius: 50%;
+    animation: wingFlap 1.5s infinite;
+}
+
+#animated-letter-icon::before {
+    left: -40px;
+    transform-origin: bottom right;
+}
+
+#animated-letter-icon::after {
+    right: -40px;
+    transform-origin: bottom left;
+}
+
+@keyframes wingFlap {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <div id="birthday-question">Bạn có nhớ ngày sinh của mình không?</div>
+        <div id="birthday-input-container">
+            <input type="text" id="birthday-input" placeholder="">
+            <div id="loading">🎅 Loading...</div>
+        </div>
+        <button id="submit-button">Gửi</button>
+    </div>
+    
+    
+    <div id="video-container" class="hidden">
+        <video id="video_url" muted autoplay loop>
+            <source src="./assets/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="letter-icon" class="hidden">&#9993;</div>
+    <div id="animated-letter-icon" class="hidden">&#9993;</div>
+    <div id="animated-arrow" class="hidden">⬇️</div>
+    <div id="card" class="hidden">
+        <h2>Merry Christmas!</h2>
+        <p> Chúc mừng bạn đã vượt ải thành công 👏👏👏 Ding ding donggg~ Giáng sinh lại tới rồi! ❄️🎅🎄Chúc bạn luôn hạnh phúc, giàu có và xinh đẹp...ngắn gọn mà đủ ý heee😊</p>
+        
+        
+    </div>
+
+    <audio id="music" loop>
+        <source src="./assets/christmas-holidays-270797.mp3" type="audio/mp3">
+    </audio>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+    var audio = document.getElementById("music");
+
+    // Phát nhạc khi người dùng tương tác (click vào trang)
+    $(document).click(function() {
+        audio.play();
+    });
+
+    // Hiển thị icon thư dễ thương khi nhấn vào nút gửi
+    $('#submit-button').click(function() {
+        var birthday = $('#birthday-input').val();
+        if (birthday) {
+            $('#loading').show(); // Hiển thị thanh loading
+            setTimeout(function() { // Giả lập thời gian loading
+                $('#loading').hide(); // Ẩn thanh loading
+                $('#content').hide();  // Ẩn câu hỏi
+                $('#video-container').removeClass('hidden');  // Hiển thị video
+                $('#animated-letter-icon').fadeIn();  // Hiển thị icon thư dễ thương ở giữa
+            }, 2000); // 2 giây loading
+        }
+    });
+
+    // Xử lý sự kiện khi nhấn vào icon lá thư
+    $('#animated-letter-icon').click(function() {
+        // Hiển thị thiệp ngay ở giữa màn hình mà không bị khựng
+        $('#card').css({
+            display: 'flex',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)'
+        }).fadeIn();  // Đảm bảo hiển thị chính xác ở giữa
+        $('#animated-letter-icon').fadeOut();  // Ẩn icon thư
+    });
+});
+
+    </script>
+
+</body>
+</html>
